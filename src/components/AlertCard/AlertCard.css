@@ -24,7 +24,6 @@
   border-left-color: #999999;
 }
 
-/* Top row: severity + pile name */
 .alert-card__top {
   display: flex;
   align-items: center;
@@ -49,13 +48,11 @@
   color: var(--navy);
 }
 
-/* Sensor details */
 .alert-card__sensors {
   font-size: 0.9rem;
   color: #333;
 }
 
-/* Action box */
 .alert-card__action {
   border-radius: 6px;
   padding: 0.75rem 1rem;
