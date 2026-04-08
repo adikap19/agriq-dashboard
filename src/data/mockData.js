@@ -40,4 +40,25 @@ const piles = [
   }
 ];
 
-export { piles };
+const ACTION_TEXT = {
+  critical: "Immediate action required. Contact facility manager and inspect pile now.",
+  warning:  "Increase monitoring frequency. Schedule an inspection within 24 hours.",
+  faulty:   "Sensor may be malfunctioning. Verify physically and flag for replacement.",
+};
+
+function getAlerts() {
+  return piles.flatMap((pile) =>
+    pile.problemSensors.map((sensor) => ({
+      pileId:     pile.id,
+      pileName:   pile.name,
+      severity:   sensor.status,
+      sensorIds:  sensor.ids,
+      layer:      sensor.layer,
+      temp:       sensor.temp,
+      moisture:   sensor.moisture,
+      actionText: ACTION_TEXT[sensor.status],
+    }))
+  );
+}
+
+export { piles, getAlerts };
