@@ -58,7 +58,7 @@ npm run dev
 
 Visit [http://localhost:5173](http://localhost:5173) in your browser.
 
-> **No backend required.** All data is hardcoded in `src/data/mockData.js` — the app runs entirely in the browser.
+All data is hardcoded in `src/data/mockData.js` — the app runs entirely in the browser.
 
 ---
 
