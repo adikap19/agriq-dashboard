@@ -1,52 +1,91 @@
 .alert-card {
   border-radius: 8px;
-  border-left: 4px solid transparent;
-  padding: 1.1rem 1.4rem;
+  border-left: 6px solid transparent;
+  padding: 1.25rem 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.75rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
 }
 
 .alert-card--critical {
-  background: var(--crit-bg);
+  background: #fff0f0;
   border-left-color: var(--red);
+  box-shadow: 0 2px 8px rgba(192, 57, 43, 0.15);
 }
 
 .alert-card--warning {
-  background: var(--warn-bg);
+  background: #ffffff;
   border-left-color: var(--amber);
 }
 
 .alert-card--faulty {
-  background: #efefef;
-  border-left-color: #aaaaaa;
+  background: #f0f0f0;
+  border-left-color: #999999;
+}
+
+/* Top row: severity + pile name */
+.alert-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .alert-card__severity {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.06em;
 }
 
-.alert-card__severity--critical { color: var(--red);   }
-.alert-card__severity--warning  { color: var(--amber); }
-.alert-card__severity--faulty   { color: var(--gray);  }
+.alert-card__severity--critical { font-size: 0.85rem; font-weight: 800; color: var(--red);   }
+.alert-card__severity--warning  { font-weight: 700;   color: var(--amber); }
+.alert-card__severity--faulty   { font-weight: 700;   color: #999999;      }
 
 .alert-card__pile {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--navy);
 }
 
+/* Sensor details */
 .alert-card__sensors {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: #333;
 }
 
+/* Action box */
 .alert-card__action {
-  font-size: 0.8rem;
-  font-style: italic;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+}
+
+.alert-card__action--critical { background: #fcd9d9; }
+.alert-card__action--warning  { background: #f5f5f5; }
+.alert-card__action--faulty   { background: #efefef; }
+
+.alert-card__action-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--gray);
-  margin-top: 0.25rem;
+  margin-bottom: 0.3rem;
+}
+
+.alert-card__action-text--critical {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+
+.alert-card__action-text--warning,
+.alert-card__action-text--faulty {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--gray);
+  line-height: 1.5;
 }

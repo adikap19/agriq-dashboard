@@ -1,6 +1,6 @@
 import './AlertCard.css';
 
-const SEVERITY_LABEL = { critical: 'Critical', warning: 'Warning', faulty: 'Sensor Fault' };
+const SEVERITY_LABEL = { critical: '🔴 Critical', warning: '🟡 Warning', faulty: '⚠️ Sensor Fault' };
 
 export default function AlertCard({ alert }) {
   const { severity, pileName, sensorIds, layer, temp, moisture, actionText } = alert;
@@ -15,14 +15,21 @@ export default function AlertCard({ alert }) {
 
   return (
     <div className={`alert-card alert-card--${severity}`}>
-      <span className={`alert-card__severity alert-card__severity--${severity}`}>
-        {SEVERITY_LABEL[severity]}
-      </span>
-      <p className="alert-card__pile">{pileName}</p>
+      <div className="alert-card__top">
+        <span className={`alert-card__severity alert-card__severity--${severity}`}>
+          {SEVERITY_LABEL[severity]}
+        </span>
+        <span className="alert-card__pile">{pileName}</span>
+      </div>
+
       <p className="alert-card__sensors">
-        Sensors {sensorRange} &mdash; {layer} layer &mdash; {readings}
+        Sensors <strong>{sensorRange}</strong> &mdash; <strong>{layer} layer</strong> &mdash; <strong>{readings}</strong>
       </p>
-      <p className="alert-card__action">{actionText}</p>
+
+      <div className={`alert-card__action alert-card__action--${severity}`}>
+        <span className="alert-card__action-label">Action required</span>
+        <p className={`alert-card__action-text--${severity}`}>{actionText}</p>
+      </div>
     </div>
   );
 }

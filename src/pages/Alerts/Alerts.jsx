@@ -13,6 +13,13 @@ export default function Alerts() {
     <main className="alerts">
       <header className="alerts__header">
         <h1 className="alerts__title">Active Alerts</h1>
+        {alerts.length > 0 && (
+          <p className="alerts__subtitle">
+            {alerts.filter(a => a.severity === 'critical').length} critical &nbsp;·&nbsp;
+            {alerts.filter(a => a.severity === 'warning').length} warning &nbsp;·&nbsp;
+            {alerts.filter(a => a.severity === 'faulty').length} faulty
+          </p>
+        )}
       </header>
 
       {alerts.length === 0 ? (
