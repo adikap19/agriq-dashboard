@@ -24,7 +24,7 @@ function SensorBall({ id, pile }) {
       {status === 'faulty' ? (
         <>
           <span className="sensor-ball__faulty-icon">⚠️</span>
-          <span className="sensor-ball__faulty-label">Erratic</span>
+          <span className="sensor-ball__faulty-label">Faulty?</span>
         </>
       ) : (
         <>

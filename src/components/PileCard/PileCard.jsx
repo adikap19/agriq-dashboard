@@ -8,7 +8,7 @@ function sensorSummary(sensor) {
   const range =
     ids.length > 1 ? `${ids[0]}–${ids[ids.length - 1]}` : ids[0];
   if (sensor.status === 'faulty') {
-    return `${range} ${sensor.layer}: Erratic readings`;
+    return `${range} ${sensor.layer}: erratic readings, possible faulty sensor`;
   }
   return `${range} ${sensor.layer}: ${sensor.temp}°C / ${sensor.moisture}%`;
 }
