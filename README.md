@@ -1,16 +1,79 @@
-# React + Vite
+# agriQ Operator Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A grain storage monitoring dashboard built for operators at the Emek Hefer facility. The dashboard provides a real-time view of pile health across all storage sites — displaying average temperature and moisture per pile, individual sensor readings across three depth layers (bottom, middle, and top), and a dedicated Alerts page that surfaces critical and warning conditions with clear, actionable guidance for the operator on duty.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- **React 19**
+- **Vite**
+- **React Router**
+- **Plain CSS** — component-scoped, no Tailwind or CSS frameworks
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## How to Run Locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+Before you begin, make sure you have the following installed:
+
+- **Node.js** v18 or higher — https://nodejs.org
+- **npm** — included with Node.js, no separate install needed
+- **Git** — https://git-scm.com
+
+To verify your setup, run:
+```bash
+node --version   # should print v18.x.x or higher
+npm --version    # should print 9.x.x or higher
+```
+
+---
+
+### Setup & Run
+
+**Step 1 — Clone the repository**
+```bash
+git clone https://github.com/adikap19/agriq-dashboard.git
+```
+
+**Step 2 — Navigate into the project folder**
+```bash
+cd agriq-dashboard
+```
+
+**Step 3 — Install dependencies**
+```bash
+npm install
+```
+This installs React, Vite, React Router, and all other dependencies listed in `package.json`.
+
+**Step 4 — Start the development server**
+```bash
+npm run dev
+```
+
+**Step 5 — Open the app**
+
+Visit [http://localhost:5173](http://localhost:5173) in your browser.
+
+> **No backend required.** All data is hardcoded in `src/data/mockData.js` — the app runs entirely in the browser.
+
+---
+
+## Project Structure
+
+```
+src/
+├── data/           # mockData.js — single source of truth for all pile and sensor data
+├── pages/
+│   ├── Sites/      # Main overview page — lists all piles with expandable sensor grids
+│   └── Alerts/     # Alerts page — sorted by severity with recommended operator actions
+└── components/
+    ├── NavBar/     # Top navigation with live alert count badge
+    ├── PileCard/   # Per-pile card with status, readings, and expand/collapse
+    ├── SensorGrid/ # 30-sensor grid across 3 depth layers with status coloring
+    └── AlertCard/  # Individual alert card with severity, affected sensors, and action text
+```
+
