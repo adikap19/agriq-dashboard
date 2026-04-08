@@ -7,9 +7,10 @@ function sensorSummary(sensor) {
   const ids = sensor.ids;
   const range =
     ids.length > 1 ? `${ids[0]}–${ids[ids.length - 1]}` : ids[0];
-  const temp = sensor.temp != null ? `${sensor.temp}°C` : 'N/A';
-  const moisture = sensor.moisture != null ? `${sensor.moisture}%` : 'N/A';
-  return `${range} ${sensor.layer}: ${temp} / ${moisture}`;
+  if (sensor.status === 'faulty') {
+    return `${range} ${sensor.layer}: Erratic readings`;
+  }
+  return `${range} ${sensor.layer}: ${sensor.temp}°C / ${sensor.moisture}%`;
 }
 
 export default function PileCard({ pile, isExpanded, onClick }) {
