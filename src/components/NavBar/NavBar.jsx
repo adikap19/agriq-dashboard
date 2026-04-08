@@ -2,9 +2,9 @@ import { NavLink } from 'react-router-dom';
 import { getAlerts } from '../../data/mockData';
 import './NavBar.css';
 
-const activeAlertCount = getAlerts().filter(
-  (a) => a.severity === 'critical' || a.severity === 'warning'
-).length;
+// Badge includes faulty sensors — a malfunctioning sensor requires
+// operator attention even if it is not a direct safety threat.
+const activeAlertCount = getAlerts().length;
 
 export default function NavBar() {
   return (
