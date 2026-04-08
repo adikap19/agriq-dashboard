@@ -17,16 +17,20 @@ export default function Sites() {
         <p className="sites__subtitle">Emek Hefer Facility</p>
       </header>
 
-      <div className="sites__list">
-        {piles.map((pile) => (
-          <PileCard
-            key={pile.id}
-            pile={pile}
-            isExpanded={expandedId === pile.id}
-            onClick={() => handleCardClick(pile.id)}
-          />
-        ))}
-      </div>
+      {piles.length === 0 ? (
+        <p className="sites__empty">No storage sites found. Add pile data to get started.</p>
+      ) : (
+        <div className="sites__list">
+          {piles.map((pile) => (
+            <PileCard
+              key={pile.id}
+              pile={pile}
+              isExpanded={expandedId === pile.id}
+              onClick={() => handleCardClick(pile.id)}
+            />
+          ))}
+        </div>
+      )}
     </main>
   );
 }
