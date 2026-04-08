@@ -26,6 +26,23 @@
   margin-bottom: 0.6rem;
 }
 
+.pile-card__title-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pile-card__chevron {
+  font-size: 1.1rem;
+  color: var(--gray);
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+
+.pile-card__chevron--open {
+  transform: rotate(180deg);
+}
+
 .pile-card__name {
   font-size: 1.05rem;
   font-weight: 600;

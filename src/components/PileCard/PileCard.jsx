@@ -19,9 +19,12 @@ export default function PileCard({ pile, isExpanded, onClick }) {
       <div className="pile-card__header">
         <div className="pile-card__title-row">
           <h2 className="pile-card__name">{pile.name}</h2>
-          <span className={`pile-card__badge pile-card__badge--${pile.status}`}>
-            {STATUS_LABEL[pile.status]}
-          </span>
+          <div className="pile-card__title-right">
+            <span className={`pile-card__badge pile-card__badge--${pile.status}`}>
+              {STATUS_LABEL[pile.status]}
+            </span>
+            <span className={`pile-card__chevron ${isExpanded ? 'pile-card__chevron--open' : ''}`}>▾</span>
+          </div>
         </div>
 
         <div className="pile-card__stats">
