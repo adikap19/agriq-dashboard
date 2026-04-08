@@ -1,1 +1,52 @@
-/* AlertCard component styles */
+.alert-card {
+  border-radius: 8px;
+  border-left: 4px solid transparent;
+  padding: 1.1rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.alert-card--critical {
+  background: var(--crit-bg);
+  border-left-color: var(--red);
+}
+
+.alert-card--warning {
+  background: var(--warn-bg);
+  border-left-color: var(--amber);
+}
+
+.alert-card--faulty {
+  background: #efefef;
+  border-left-color: #aaaaaa;
+}
+
+.alert-card__severity {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.alert-card__severity--critical { color: var(--red);   }
+.alert-card__severity--warning  { color: var(--amber); }
+.alert-card__severity--faulty   { color: var(--gray);  }
+
+.alert-card__pile {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.alert-card__sensors {
+  font-size: 0.875rem;
+  color: #333;
+}
+
+.alert-card__action {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--gray);
+  margin-top: 0.25rem;
+}

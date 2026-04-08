@@ -1,1 +1,29 @@
-/* Alerts page styles */
+.alerts {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.alerts__header {
+  margin-bottom: 1.75rem;
+}
+
+.alerts__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.alerts__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.alerts__clear {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--green);
+}
