@@ -1,1 +1,27 @@
-/* Sites page styles */
+.sites {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.sites__header {
+  margin-bottom: 1.75rem;
+}
+
+.sites__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.sites__subtitle {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-top: 0.25rem;
+}
+
+.sites__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
