@@ -62,7 +62,7 @@ npm run dev
 
 **Step 5 — Open the app**
 
-Visit [http://localhost:5173](http://localhost:5173) in your browser.
+Vite will print a local URL in the terminal (e.g. `http://localhost:5173`). Open that URL in your browser.
 
 All data is hardcoded in `src/data/mockData.js` — the app runs entirely in the browser.
 
