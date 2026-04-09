@@ -77,3 +77,14 @@ src/
     └── AlertCard/  # Individual alert card with severity, affected sensors, and action text
 ```
 
+---
+
+## Related Documents
+
+- [Task 1 — Backend Architecture Design](./Adi%20Kapuri%20agriQ%20.rtf.doc)
+
+---
+
+## Screenshots
+
+<!-- Add screenshots here -->
