@@ -4,6 +4,12 @@ A grain storage monitoring dashboard built for operators at the Emek Hefer facil
 
 ---
 
+## Related Documents
+
+- [Task 1 — Backend Architecture Design](./Adi%20Kapuri%20agriQ%20.rtf.doc)
+
+---
+
 ## Tech Stack
 
 - **React 19**
@@ -76,12 +82,6 @@ src/
     ├── SensorGrid/ # 30-sensor grid across 3 depth layers with status coloring
     └── AlertCard/  # Individual alert card with severity, affected sensors, and action text
 ```
-
----
-
-## Related Documents
-
-- [Task 1 — Backend Architecture Design](./Adi%20Kapuri%20agriQ%20.rtf.doc)
 
 ---
 
