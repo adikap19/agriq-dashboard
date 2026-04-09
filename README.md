@@ -83,8 +83,3 @@ src/
     └── AlertCard/  # Individual alert card with severity, affected sensors, and action text
 ```
 
----
-
-## Screenshots
-
-<!-- Add screenshots here -->
